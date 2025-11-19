@@ -1,0 +1,78 @@
+<div class="row">
+    <div class="col-12 mb-4">
+        <a href="/" class="btn btn-outline-secondary">
+            <i class="fas fa-arrow-left me-2"></i>Back to Listings
+        </a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-8">
+        <div class="card mb-4">
+            {{#if airbnb.thumbnail}}
+            <img src="{{airbnb.thumbnail}}" class="card-img-top" alt="{{airbnb.NAME}}">
+            {{else if airbnb.images.length}}
+            <img src="{{airbnb.images.[0]}}" class="card-img-top" alt="{{airbnb.NAME}}">
+            {{else}}
+            <div class="card-img-top bg-light d-flex align-items-center justify-content-center" style="height: 300px;">
+                <i class="fas fa-home fa-5x text-muted"></i>
+            </div>
+            {{/if}}
+            
+            <div class="card-body">
+                <h1 class="h2 fw-bold mb-3">{{airbnb.NAME}}</h1>
+                
+                <div class="d-flex gap-2 mb-3">
+                    <span class="badge bg-primary">{{airbnb.room_type}}</span>
+                    {{#if airbnb.neighbourhood}}
+                    <span class="badge bg-secondary">{{airbnb.neighbourhood}}</span>
+                    {{/if}}
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <h2 class="price-tag">${{airbnb.price}} <small class="text-muted">/ night</small></h2>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="fas fa-star text-warning me-2"></i>
+                            <strong>{{airbnb.review_rate_number}}</strong>
+                            <span class="text-muted ms-2">({{airbnb.number_of_reviews}} reviews)</span>
+                        </div>
+                    </div>
+                </div>
+
+                {{#if airbnb.house_rules}}
+                <div class="mb-4">
+                    <h5 class="fw-bold">Description</h5>
+                    <p class="text-muted">{{airbnb.house_rules}}</p>
+                </div>
+                {{/if}}
+
+                {{#if airbnb.host_name}}
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h5 class="fw-bold">Host Information</h5>
+                        <p class="mb-1"><strong>Host:</strong> {{airbnb.host_name}}</p>
+                        {{#if airbnb.calculated_host_listings_count}}
+                        <p class="mb-0"><strong>Listings:</strong> {{airbnb.calculated_host_listings_count}}</p>
+                        {{/if}}
+                    </div>
+                </div>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="fw-bold mb-3">Booking Info</h5>
+                <div class="d-grid gap-2">
+                    <a href="/" class="btn btn-primary">Check Availability</a>
+                    <a href="/" class="btn btn-outline-secondary">Contact Host</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

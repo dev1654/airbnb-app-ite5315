@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-body p-4">
+                <h2 class="fw-bold mb-4">Add New Listing</h2>
+                
+                <form method="POST" action="/create">
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Property Name</label>
+                        <input type="text" class="form-control" name="NAME" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Price per Night ($)</label>
+                        <input type="number" class="form-control" name="price" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Room Type</label>
+                        <select class="form-select" name="room_type">
+                            <option value="Entire home/apt">Entire Home/Apartment</option>
+                            <option value="Private room">Private Room</option>
+                            <option value="Shared room">Shared Room</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Neighborhood</label>
+                        <input type="text" class="form-control" name="neighbourhood">
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">Beds</label>
+                            <input type="number" class="form-control" name="beds" value="1">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">Bathrooms</label>
+                            <input type="number" class="form-control" name="bathrooms" value="1">
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Host Name</label>
+                        <input type="text" class="form-control" name="host_name">
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary">Add Listing</button>
+                        <a href="/" class="btn btn-outline-secondary">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
